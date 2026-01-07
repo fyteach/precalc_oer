@@ -1,0 +1,217 @@
+/* Professional Bright & Invitational Color Scheme - Softer Contrast */
+:root {
+    --primary-color: #1E6FB9;      /* Bright, professional blue */
+    --secondary-color: #3AA76D;    /* Fresh, invitational green */
+    --accent-color: #FF6B35;       /* Warm, energetic orange */
+    --light-color: #F8FAFC;        /* Clean light background */
+    --text-color: #2D3748;         /* Professional dark gray */
+    --background-color: #FFFFFF;    /* White background */
+    --card-background: #FFFFFF;     /* White cards */
+    --footer-bg: #1E3A8A;          /* Deep professional blue */
+    --footer-text: #F1F5F9;        /* Softer white for footer text */
+    --footer-link: #93C5FD;        /* Light blue for footer links */
+    --header-text: #F8FAFC;        /* Soft off-white for header text */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header with proper h1 styling */
+header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #0D4A8C 100%);
+    color: var(--header-text);
+    padding: 3rem 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(30, 111, 185, 0.15);
+}
+
+/* Ensure the h1 in header is properly sized and styled */
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0 2rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* Card-like Sections with subtle shadows */
+.card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.download-section {
+    background-color: var(--light-color);
+    text-align: center;
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* Button Style */
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2E8B57;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(58, 167, 109, 0.3);
+}
+
+/* Features Grid */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.feature-card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+footer .container {
+    padding: 1rem 0;
+}
+
+footer a {
+    color: var(--footer-link);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #BFDBFE;
+}
+
+/* Update Notice */
+.update-notice {
+    background-color: #FFFBEB;
+    border-left: 4px solid #F59E0B;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    color: #92400E;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 2.5rem 0;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+        padding: 0 1.5rem;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .container {
+        padding: 1rem 0;
+        width: 95%;
+    }
+    
+    .card, .feature-card {
+        padding: 1.25rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 2rem 0;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+        padding: 0 1rem;
+    }
+    
+    .container {
+        width: 100%;
+        padding: 0.5rem;
+    }
+    
+    .card, .feature-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    header {
+        background: #fff !important;
+        color: #000 !important;
+    }
+    
+    header h1 {
+        color: #000 !important;
+        text-shadow: none !important;
+    }
+    
+    .btn, .features, .update-notice {
+        display: none;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}

@@ -1,0 +1,36 @@
+name: Convert Markdown and Deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+
+      - name: Convert Markdown to HTML
+        run: |
+          mkdir -p deploy
+          pandoc -s --css style.css -o deploy/index.html index.md
+
+      - name: Copy supporting files
+        run: |
+          cp style.css deploy/
+          # mv *.pdf deploy/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./deploy
