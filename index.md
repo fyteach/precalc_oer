@@ -16,7 +16,7 @@ This book works well for a one-semester precalculus course. It can also help stu
 
 ::: {.update-notice}
 
-**Last Updated:** <span id="current-date"></span>
+**Last Updated:** {{COMPILE_DATE}}
 
 This book is updated sometimes with corrections and improvements. Check back for the latest version.
 
@@ -79,12 +79,3 @@ This resource is a living project. The author welcomes **comments, corrections, 
 This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/){target=_blankpage} and funded in part by the [CUNY OER Initiative](https://cunyoer.commons.gc.cuny.edu/){target=_blankpage}.
 :::
 </footer>
-
-<script>
-// Add current date to the update notice
-document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-});
-</script>
